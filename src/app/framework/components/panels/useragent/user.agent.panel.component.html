@@ -1,0 +1,57 @@
+
+<div class="app user agent panel" *ngIf="composed">
+  <div class="container" [ngStyle]="panelCssStyle">
+    <div class="content polyptych centered">
+      <div class="left outer panel">
+        <div class="browser image" [ngStyle]="imageCssStyle">
+          <img
+              [ngSrc]="browserImageSrc"
+              [width]="intrinsicImageWidth"
+              [height]="intrinsicImageHeight"
+              [priority]="true"
+              [alt]="browserImageText"/>
+        </div>
+      </div>
+      <div class="left inner panel">
+        <div class="angular text">
+          <span [innerHTML]="browserText"></span>
+        </div>
+      </div>
+      <div class="left center panel">
+        <div class="operating system image" [ngStyle]="imageCssStyle">
+          <img
+              [ngSrc]="operatingSystemImageSrc"
+              [width]="intrinsicImageWidth"
+              [height]="intrinsicImageHeight"
+              [priority]="true"
+              [alt]="operatingSystemImageText"/>
+        </div>
+      </div>
+      <div class="middle center panel">
+        <div class="operating system text">
+          <span [innerHTML]="operatingSystemText"></span>
+        </div>
+      </div>
+      <div class="right center panel">
+        <div class="device screen image" [ngStyle]="imageCssStyle">
+          <img
+              [ngSrc]="deviceScreenImageSrc"
+              [width]="intrinsicImageWidth"
+              [height]="intrinsicImageHeight"
+              [priority]="true"
+              [alt]="deviceScreenImageText"/>
+        </div>
+      </div>
+      <div class="right inner panel">
+        <div class="device type text">
+          <span [innerHTML]="deviceTypeText"></span>
+        </div>
+      </div>
+      <div class="right outer panel">
+        <div class="device screen text">
+          <span [innerHTML]="deviceScreenText"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

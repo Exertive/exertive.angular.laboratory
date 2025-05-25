@@ -1,0 +1,44 @@
+
+// Import Hoefler & Co Gotham Screensmart Web font faces
+
+@mixin gotham-extra-light()
+{
+  font-family: Gotham, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin gotham-light()
+{
+  font-family: Gotham, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin gotham-book()
+{
+  font-family: Gotham, 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin gotham-medium()
+{
+  font-family: Gotham, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin gotham-bold()
+{
+  font-family: Gotham, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin gotham-black()
+{
+  font-family: Gotham, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="AngularIcon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="256" height="256"
+  viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .filled.linear.gradient
+      {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient
+      id="linear-gradient"
+      x1="16" y1="128" x2="240" y2="128"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#f0060b"/>
+      <stop offset="0.0" stop-color="#f0070c"/>
+      <stop offset="0.5" stop-color="#cc26d5"/>
+      <stop offset="1.0" stop-color="#7702ff"/>
+    </linearGradient>
+  </defs>
+  <path
+    class="filled linear gradient"
+    d="M240,47.9l-8.1,128.4L154.7,8l85.3,39.9ZM186.6,214.1l-58.5,33.9-58.5-33.9,11.8-29.3h
+    93.2l11.8,29.3h.3ZM128.2,72l30.8,75.3h-61.2l30.8-75.3h-.3ZM24.1,176.6L16,48.3,101.3,
+    8.3,24.1,176.6Z"/>
+</svg>

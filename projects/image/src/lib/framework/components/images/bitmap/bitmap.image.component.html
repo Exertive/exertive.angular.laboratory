@@ -1,0 +1,100 @@
+<div class="app responsive image">
+  <div #ImageContainer class="container" [ngStyle]="outerCssStyle">
+    <div class="content" [ngStyle]="innerCssStyle">
+      <ik-image
+        [ngStyle]="imageCssStyle"
+        [src]="imageSrc()"
+        [transformation]="imageTransformations"
+        *ngIf="composed">
+      </ik-image>
+    </div>
+  </div>
+  <div #ImageOverlay class="overlay" [ngStyle]="outerCssStyle">
+    <div class="information panel" [ngStyle]="informationCssStyle">
+      <div class="content sectional">
+        <section class="header">
+          <div class="content diptych">
+            <div class="left panel">
+              <div class="content tiered">
+                <div class="upper tier">
+                  <div class="title text">
+                    <span [innerHTML]="image().title"></span>
+                  </div>
+                </div>
+                <div class="lower tier">
+                  <div class="artist text">
+                    <span [innerHTML]="image().artist"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right panel">
+              <div class="action">
+                <div class="close icon" (click)="onCloseClick($event)">
+                  <svg
+                    id="CrossIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px" y="0px"
+                    viewBox="0 0 64 64">
+                    <defs>
+                      <style>
+                        .outlined
+                        {
+                          fill: none;
+                          stroke: currentColor;
+                          stroke-width: 3px;
+                          stroke-opacity: 1.0;
+                          stroke-linecap: butt;
+                          stroke-dasharray: none;
+                          stroke-linejoin: miter;
+                          stroke-miterlimit: 10;
+                        }
+                      </style>
+                    </defs>
+                    <line class="outlined" x1="12" y1="12" x2="52" y2="52"/>
+                    <line class="outlined" x1="12" y1="52" x2="52" y2="12"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="body">
+          <div class="content panel">
+            <div class="description text">
+              <span [innerHTML]="image().description"></span>
+            </div>
+          </div>
+        </section>
+        <section class="footer">
+          <div class="content panel">
+            <div class="dimensions text">
+              <span [innerHTML]="imageDimensions"></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      class="information icon"
+      [ngClass]="cssClass['button']"
+      (click)="onInformationClick($event)">
+      <svg
+        id="InformationIcon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 64 64">
+        <defs>
+          <style>
+            .fill.white
+            {
+              fill: rgba(255,255,255,0.85);
+              stroke: none;
+            }
+          </style>
+        </defs>
+        <circle class="fill white" cx="32" cy="14" r="6"/>
+        <path class="fill white" d="M25,24c-2.76,0-5,2.24-5,5s2.24,5,5,5h3s0,14,0,14h-10v8h28v-8h-10v-14s6,0,6,0v-10h-14s-3,0-3,0Z"/>
+      </svg>
+    </div>
+  </div>
+</div>

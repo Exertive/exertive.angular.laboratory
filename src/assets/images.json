@@ -1,0 +1,21 @@
+{
+  "images": {
+    "bitmaps": [
+      {
+        "key": "WhiteHorseImage",
+        "category": "Image",
+        "subcategory": "Photograph",
+        "format": "image/png",
+        "host": "https://ik.imagekit.io/exertive/",
+        "path": "laboratory/uffington_white_horse_by_yann_arthus_bertrand_marked_hero_image_3840x2560.png",
+        "size": {
+          "width": 3840,
+          "height": 2560
+        },
+        "title": "The Uffington White Horse from Above",
+        "artist": "Yann Arthus-Bertrand",
+        "description": "An aerial view of the Uffington White Horse in Oxfordshire taken by French environmentalist, journalist and photographer Yann Arthus-Bertrand and published in his book 'Earth from Above' in 1999. The horse, which is 110 metres long from nose to tail, was created some time between 1380 and 550 BC, during the late Bronze Age or early Iron Age."
+      }
+    ]
+  }
+}

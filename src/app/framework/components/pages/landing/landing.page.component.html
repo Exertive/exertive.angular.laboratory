@@ -1,0 +1,66 @@
+
+<div class="app landing page">
+  <div class="container">
+    <div class="content sectional">
+      <section class="header">
+        <div class="content polyptych">
+          <div class="exertive logo image" [ngStyle]="exertiveLogoCssStyle">
+            <img
+              [ngSrc]="exertiveLogoImageSrc"
+              [width]="exertiveLogoImageWidth"
+              [height]="exertiveLogoImageHeight"
+              [priority]="true"
+              alt="">
+          </div>
+          <div class="title text">{{titleText}}</div>
+          <div class="spacer"></div>
+          <div class="actions">
+          </div>
+        </div>
+      </section>
+      <section class="body">
+        <div class="content sectional">
+          <!--
+          Place any content here or add a route. If a content component
+          is added then it must be declared as the (#)ContentComponent
+          template variable.
+          -->
+          <section class="header"></section>
+          <section class="body">
+            <!--
+            <bitmap-image [image]="heroImage" [loaded]="heroImageLoaded"></bitmap-image>
+            -->
+            <bitmap-image [image]="bitmapImage"></bitmap-image>
+          </section>
+          <section class="footer"></section>
+        </div>
+      </section>
+      <section class="footer">
+        <div class="content polyptych">
+          <div class="left panel">
+            <angular-panel
+              [version]="angularVersion"
+              [width]="248"
+              [height]="32">
+            </angular-panel>
+          </div>
+          <div class="center panel"></div>
+          <div class="right panel">
+            <user-agent-panel
+              [agent]="userAgent"
+              [width]="640"
+              [height]="32">
+            </user-agent-panel>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="content overlay">
+      <!--
+      <div class="cookie notice" *ngIf="displayCookieNotice">
+        <compliance-cookie-notice></compliance-cookie-notice>
+      </div>
+      -->
+    </div>
+  </div>
+</div>

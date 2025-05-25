@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="LandscapeResolutionIconImage"
+  xmlns="http://www.w3.org/2000/svg"
+  width="512" height="512"
+  viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .outlined
+      {
+        fill: none;
+        stroke: #242424;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <path class="outlined" d="M480,256v136c0,4.4-3.6,8-8,8H196"/>
+  <path class="outlined" d="M32,256V120c0-4.4,3.6-8,8-8h280"/>
+  <line class="outlined" x1="476" y1="116" x2="290" y2="234"/>
+  <path class="outlined" d="M480,224v-104c0-4.4-3.6-8-8-8h-104"/>
+  <line class="outlined" x1="36" y1="396" x2="222" y2="278"/>
+  <path class="outlined" d="M32,288v104c0,4.4,3.6,8,8,8h104"/>
+</svg>

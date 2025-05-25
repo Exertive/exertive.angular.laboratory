@@ -1,0 +1,45 @@
+
+html
+{
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #F2F2F2;
+  overflow: hidden;
+}
+body
+{
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  left: 8px;
+  top: 8px;
+  width: calc(100vw - 16px);
+  height: calc(100vh - 16px);
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+  color: #262626;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+body
+{
+  // Hide the scrollbar in IE and Edge
+  -ms-overflow-style: none;
+  // Hide the scrollbar in Firefox
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar
+{
+  // Hide the scrollbar in Chrome and Safari
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+

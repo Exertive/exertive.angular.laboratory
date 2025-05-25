@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st1 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st2 {
+        fill: url(#radial-gradient);
+      }
+
+      .st3 {
+        fill: url(#radial-gradient1);
+      }
+
+      .st4 {
+        fill: #fb645c;
+      }
+
+      .st5 {
+        fill: #fbfffc;
+      }
+
+      .st6 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 1;
+        stroke-width: 1.3px;
+      }
+
+      .st7 {
+        fill: url(#linear-gradient);
+      }
+
+      .st8 {
+        fill: #cac7c8;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="254" y1="491" x2="258" y2="19.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d2d2d2"/>
+      <stop offset=".5" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="58" y1="-385.8" x2="65.6" y2="-6.1" gradientTransform="translate(194.2 55.2) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005ad5"/>
+      <stop offset=".2" stop-color="#0875f0"/>
+      <stop offset=".3" stop-color="#218cee"/>
+      <stop offset=".6" stop-color="#27a5f3"/>
+      <stop offset=".8" stop-color="#25aaf2"/>
+      <stop offset="1" stop-color="#21aaef"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="-17.7" cy="295.1" fx="-17.7" fy="295.1" r="207.8" gradientTransform="translate(283 1060.5) rotate(-.8) scale(.9 -2.7)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24a5f3" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1e8ceb" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient1" cx="664.7" cy="1743" fx="664.7" fy="1743" r="358.1" gradientTransform="translate(-790.5 -203.6) rotate(91) scale(.6 -.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5488d6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5d96eb"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient2" x1="752.3" y1="-730.8" x2="820" y2="-664.6" gradientTransform="translate(-77.2 -239.6) scale(.6 -.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c72e24"/>
+      <stop offset="1" stop-color="#fd3b2f"/>
+    </linearGradient>
+  </defs>
+  <circle class="st7" cx="256" cy="256" r="240"/>
+  <g>
+    <ellipse class="st1" cx="255.9" cy="256" rx="207.8" ry="207.9"/>
+    <ellipse class="st2" cx="255.9" cy="256.1" rx="207.8" ry="207.9"/>
+  </g>
+  <ellipse class="st3" cx="256" cy="256" rx="208" ry="208"/>
+  <g>
+    <path class="st8" d="M108.3,379.7l1.6.8,161.9-104.9-16.5-19.5-147.1,123.6Z"/>
+    <path class="st5" d="M107.9,378l.4,1.7,147.1-123.6-15.6-19.4-131.9,141.3h0Z"/>
+    <path class="st0" d="M271.8,275.6l-16.5-19.5,148.2-124.5.6,1.6s-132.3,142.4-132.3,142.4Z"/>
+    <path class="st4" d="M239.8,236.7l15.6,19.4,148.2-124.5-1.5-.8s-162.3,105.8-162.3,105.8Z"/>
+  </g>
+  <path class="st6" d="M100.5,365.3l12.1-8.2M69.4,288.5l30-5.3M67.4,272.1l14.5-1.2M69.3,222.9l30,5.3M67.7,239.9l14.5,1.5M77.6,191l28.7,10.5M91.8,161.1l26.4,15.3M111,134.2l23.4,19.6M134.5,111.1l19.6,23.4M161.7,92.2l15.3,26.4M191.2,78l10.4,28.6M223.3,69.6l5.3,30M288.6,69.2l-5.3,30M321.1,77.7l-10.5,28.6M351,91.9l-15.2,26.4M378.1,111l-19.7,23.4M420.6,161.2l-26.4,15.3M434.4,191.4l-28.7,10.4M442.8,223.4l-30.1,5.3M442.8,289.5l-30.1-5.4M434.2,321.5l-28.6-10.4M420.2,351.4l-26.4-15.2M401.1,378.5l-23.4-19.5M377.6,402.1l-19.6-23.4M350.5,421l-15.4-26.5M320.2,435l-10.4-28.6M288.2,443.4l-5.3-30M222.2,443.2l5.4-30.3M190.3,434.5l10.5-28.8M160.4,420l15.3-26.5M133.5,400.9l19.5-23.2M121.2,389.7l10.6-10.3M146.6,411.1l8.5-11.9M175.1,427.8l6.4-13.3M206.2,439.5l3.9-14.3M239,445.7l1.7-14.7M271.8,445.6l-1.2-14.8M304.5,439.8l-3.7-14.2M335.6,428.5l-6.1-13.4M364.4,412.2l-8.3-12.2M389.8,390.7l-10.3-10.5M411.2,365.4l-12-8.5M427.8,336.9l-13.4-6.4M439.2,305.8l-14.2-4M444.8,273.1l-14.5-1.4M444.9,239.9l-14.7,1.2M439.3,207.1l-14.2,3.7M428.1,176l-13.4,6.2M410.7,147.1l-12.3,8.5M390.3,122.3l-10.5,10.4M365,100.8l-8.6,12M336.4,84.2l-6.4,13.3M304.8,73.1l-3.9,14M272.3,67l-1.5,14.7M239.7,67.6l1.1,14.6M207,73.2l3.7,14.2M176.4,84.6l6.2,13.3M147.7,101.1l8.4,12.2M122.2,122l10.3,10.4M100.8,147.2l11.9,8.6M84.1,175.8l13.2,6.4M73,206.6l14.2,4M73,304.6l14.2-3.5M77.8,320.5l28.8-10.5M84,336l13.5-6.2M91.6,350.7l26.4-15.2M66.8,256.4h30.6M255.7,96.8v-30.7M255.8,446.5v-30.6M445.7,256.5h-30.6"/>
+</svg>

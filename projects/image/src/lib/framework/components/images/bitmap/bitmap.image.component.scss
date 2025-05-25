@@ -1,0 +1,232 @@
+@use "../../../../../styles/colors" as colors;
+@use "../../../../../styles/fonts" as fonts;
+@use "../../../../../styles/layout" as layout;
+
+:host
+{
+  @include layout.place(relative, block, 100%, 100%);
+}
+
+div.app
+{
+  &.responsive.image
+  {
+    @include layout.place(relative, block, 100%, 100%);
+
+    & > div.container
+    {
+      @include layout.place(absolute, block, 100%, 100%);
+      inset: 0 0;
+      overflow: auto;
+      z-index: 100;
+
+      & > div.content
+      {
+        @include layout.place(absolute, block, auto, auto);
+        max-height: 100%;
+        pointer-events: auto;
+
+        img
+        {
+          object-fit: cover;
+          overflow: visible;
+        }
+      }
+    }
+
+    & > div.overlay
+    {
+      @include layout.place(absolute, block, 100%, 100%);
+      inset: 0 0;
+      z-index: 101;
+      pointer-events: auto;
+      & > div.information.panel
+      {
+        @include layout.place(absolute, block, calc(100% - 32px), auto);
+        right: 16px;
+        bottom: 16px;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 101;
+        & > div.content.sectional
+        {
+          @include layout.place(relative, grid, 100%, auto);
+          grid-template-rows: auto auto auto;
+          grid-template-columns: 100%;
+          & > section
+          {
+            @include layout.place(relative, block, 100%, auto);
+            grid-row: auto;
+            grid-column: 1;
+            padding: 8px 16px;
+            &.header
+            {
+              grid-row: 1;
+            }
+            &.body
+            {
+              grid-row: 2;
+            }
+            &.footer
+            {
+              grid-row: 3;
+            }
+          }
+          & > section.header
+          {
+            background: rgba(255,255,255,0.9);
+            & > div.content.diptych
+            {
+              @include layout.place(relative, grid, 100%, auto);
+              grid-template-rows: auto;
+              grid-template-columns: calc(100% - 32px) 32px;
+              & > div.panel
+              {
+                @include layout.place(relative, block, 100%, auto);
+                grid-row: 1;
+                grid-column: auto;
+                &.left
+                {
+                  grid-column: 1;
+                }
+                &.right
+                {
+                  grid-column: 2;
+                }
+              }
+              & > div.left.panel
+              {
+                & > div.content.tiered
+                {
+                  @include layout.place(relative, grid, 100%, auto);
+                  grid-template-rows: auto auto;
+                  grid-template-columns: 100%;
+
+                  & > div.tier
+                  {
+                    @include layout.place(relative, block, 100%, auto);
+                    grid-row: auto;
+                    grid-column: 1;
+
+                    &.upper
+                    {
+                      grid-row: 1;
+                    }
+
+                    &.lower
+                    {
+                      grid-row: 2;
+                    }
+                  }
+
+                  & > div.upper.tier
+                  {
+                    & > div.title.text
+                    {
+                      @include layout.place(relative, block, auto, auto);
+                      color: colors.$theme-charcoal;
+                      @include fonts.gotham-book();
+                      font-size: 14px;
+                      line-break: normal;
+                      text-align: left;
+                      text-transform: none;
+                    }
+                  }
+
+                  & > div.lower.tier
+                  {
+                    padding-top: 4px;
+
+                    & > div.artist.text
+                    {
+                      @include layout.place(relative, block, auto, auto);
+                      color: colors.$theme-charcoal;
+                      @include fonts.gotham-light();
+                      font-size: 12px;
+                      line-break: normal;
+                      text-align: left;
+                      text-transform: none;
+                    }
+                  }
+                }
+              }
+              & div.right.panel
+              {
+                & > div.action
+                {
+                  @include layout.place(relative, grid, 100%, 100%);
+                  padding: 4px;
+                }
+              }
+            }
+          }
+          & > section.body
+          {
+            background: rgba(255,255,255,0.7);
+            & > div.content.panel
+            {
+              @include layout.place(relative, block, 100%, auto);
+              & > div.description.text
+              {
+                @include layout.place(relative, block, auto, auto);
+                color: colors.$theme-charcoal;
+                @include fonts.gotham-light();
+                font-size: 12px;
+                line-break: normal;
+                text-align: left;
+                text-transform: none;
+                text-wrap: auto;
+              }
+            }
+          }
+          & > section.footer
+          {
+            background: rgba(255,255,255,0.9);
+            & > div.content.panel
+            {
+              @include layout.place(relative, block, 100%, auto);
+              & > div.dimensions.text
+              {
+                @include layout.place(relative, block, auto, auto);
+                color: colors.$theme-charcoal;
+                @include fonts.gotham-light();
+                font-size: 12px;
+                line-break: normal;
+                text-align: left;
+                text-transform: none;
+                text-wrap: auto;
+              }
+            }
+          }
+        }
+      }
+      & > div.information.icon
+      {
+        @include layout.place(absolute, block, 32px, 32px);
+        padding: 4px;
+        right: 16px;
+        bottom: 16px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        opacity: 1.0;
+        transition: opacity 0.5s ease;
+        pointer-events: auto;
+        cursor: pointer;
+        z-index: 101;
+      }
+      & > div.information.icon:hover
+      {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      & > div.information.icon:hover
+      {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      & > div.information.icon.hidden
+      {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}

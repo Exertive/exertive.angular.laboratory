@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="ChromeIconImage"
+  xmlns="http://www.w3.org/2000/svg"
+  width="512" height="512"
+  viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .filled.white
+      {
+        fill: #FFFFFF;
+      }
+      .filled.blue
+      {
+        fill: #1A73E8;
+      }
+      .filled.green.gradient
+      {
+        fill: url(#green-linear-gradient);
+      }
+      .filled.yellow.gradient
+      {
+        fill: url(#yellow-linear-gradient);
+      }
+      .filled.red.gradient
+      {
+        fill: url(#red-linear-gradient);
+      }
+      .unfilled
+      {
+        fill: none;
+        stroke: none;
+      }
+    </style>
+    <linearGradient
+      id="red-linear-gradient"
+      x1="48" y1="-208"
+      x2="464" y2="-208"
+      gradientTransform="translate(0 -48) scale(1 -1)"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d93025"/>
+      <stop offset="1" stop-color="#ea4335"/>
+    </linearGradient>
+    <linearGradient
+      id="yellow-linear-gradient"
+      x1="224" y1="-544"
+      x2="432" y2="-176"
+      gradientTransform="translate(0 -48) scale(1 -1)"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcc934"/>
+      <stop offset="1" stop-color="#fbbc04"/>
+    </linearGradient>
+    <linearGradient
+      id="green-linear-gradient"
+      x1="288" y1="-528"
+      x2="80" y2="-176"
+      gradientTransform="translate(0 -48) scale(1 -1)"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1e8e3e"/>
+      <stop offset="1" stop-color="#34a853"/>
+    </linearGradient>
+  </defs>
+  <circle
+    class="filled white"
+    cx="256" cy="255.9" r="120"/>
+  <path
+    class="unfilled"
+    d="M48.2,376c66.3,114.8,213,154.1,327.8,87.8,114.8-66.3,154.1-213,87.8-327.8C397.5,21.2,250.8-18.1,
+      136,48.2c0,0,0,0,0,0C21.2,114.5-18.1,261.2,48.2,376Z"/>
+  <path
+    class="unfilled"
+    d="M359.9,196c33.1,57.4,13.5,130.8-43.9,163.9-57.4,33.1-130.8,13.5-163.9-43.9-33.1-57.4-13.5-130.8,
+      43.9-163.9,0,0,0,0,0,0,57.4-33.1,130.8-13.5,163.9,43.9Z"/>
+  <path
+    class="filled red gradient"
+    d="M256,136h207.8C397.5,21.3,250.8-18.1,136.1,48.2c-36.5,21.1-66.8,51.4-87.9,87.9l103.9,179.9h0c
+    -33.2-57.3-13.7-130.6,43.5-163.8,18.3-10.6,39.1-16.2,60.3-16.2Z"/>
+  <circle
+    class="filled blue"
+    cx="256" cy="256" r="95"/>
+  <path
+    class="filled yellow gradient"
+    d="M359.9,316l-103.9,179.9c132.5,0,239.9-107.4,239.9-239.9,0-42.1-11.1-83.5-32.2-120h-207.8c66.2,
+    0,119.9,53.5,120.1,119.7,0,21.2-5.5,42-16.1,60.3Z"/>
+  <path
+    class="filled green gradient"
+    d="M152.1,316L48.2,136.1c-66.3,114.7-27,261.5,87.8,327.7,36.5,21.1,77.9,32.2,120,32.2l103.9-179.9h
+    0c-33,57.3-106.2,77.1-163.6,44.1-18.3-10.5-33.6-25.8-44.1-44.1Z"/>
+</svg>

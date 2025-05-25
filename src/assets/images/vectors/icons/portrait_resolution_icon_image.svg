@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="PortraitResolutionIconImage"
+  xmlns="http://www.w3.org/2000/svg"
+  width="512" height="512"
+  viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .outlined
+      {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <path class="outlined" d="M112,316V40c0-4.4,3.6-8,8-8h136"/>
+  <path class="outlined" d="M400,192v280c0,4.4-3.6,8-8,8h-136"/>
+  <line class="outlined" x1="278" y1="222" x2="396" y2="36"/>
+  <path class="outlined" d="M400,144V40c0-4.4-3.6-8-8-8h-104"/>
+  <line class="outlined" x1="234" y1="290" x2="116" y2="476"/>
+  <path class="outlined" d="M112,368v104c0,4.4,3.6,8,8,8h104"/>
+</svg>

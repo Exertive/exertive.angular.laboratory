@@ -1,0 +1,102 @@
+
+@use "../../../../../styles/colors" as colors;
+@use "../../../../../styles/fonts" as fonts;
+@use "../../../../../styles/layout" as layout;
+@use "../../../../../styles/material" as material;
+
+@use "sass:color" as color;
+
+:host
+{
+  @include layout.place(relative, block, auto, auto);
+}
+
+div.app
+{
+  &.user.agent.panel
+  {
+    @include layout.place(relative, block, auto, auto);
+    & > div.container
+    {
+      @include layout.place(relative, flex, auto, auto);
+      padding-right: 8px;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      & > div.content.polyptych.centered
+      {
+        @include layout.place(relative, grid, auto, auto);
+        grid-template-rows: auto;
+        grid-template-columns: repeat(7, min-content);
+        & > div.panel
+        {
+          @include layout.place(relative, block, auto, auto);
+          padding: 2px;
+          grid-row: 1;
+
+          @include fonts.open-sans-regular();
+          font-size: 12px;
+          line-height: normal;
+          -webkit-font-smoothing: antialiased;
+          text-align: left;
+          text-wrap: nowrap;
+
+          &.outer.left
+          {
+            grid-column: 1;
+          }
+          &.inner.left
+          {
+            padding-top: 3px;
+            grid-column: 2;
+          }
+          &.center.left
+          {
+            grid-column: 3;
+          }
+          &.center.middle
+          {
+            padding-top: 3px;
+            grid-column: 4;
+          }
+          &.center.right
+          {
+            grid-column: 5;
+          }
+          &.inner.right
+          {
+            padding-top: 3px;
+            grid-column: 6;
+          }
+          &.outer.right
+          {
+            padding-top: 3px;
+            grid-column: 7;
+          }
+        }
+        & > div.left.outer.panel,
+        & > div.left.center.panel,
+        & > div.right.center.panel,
+        {
+          & > div.browser.image,
+          & > div.operating.system.image,
+          & > div.device.screen.image
+          {
+            @include layout.place(relative, grid, auto, auto);
+            opacity: 0.6;
+            & > img
+            {
+              width: inherit;
+              height: inherit;
+            }
+          }
+          & > div.device.screen.image
+          {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+

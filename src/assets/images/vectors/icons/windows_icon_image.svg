@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="WindowsIconImage"
+  xmlns="http://www.w3.org/2000/svg"
+  width="512" height="512"
+  viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .filled.lower.right
+      {
+        fill: #067fd8;
+        stroke: none;
+      }
+      .filled.lower.left
+      {
+        fill: #178cd9;
+        stroke: none;
+      }
+      .filled.upper.right
+      {
+        fill: #2196e5;
+        stroke: none;
+      }
+      .filled.upper.left
+      {
+        fill: #4bb8f3;
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <rect
+    id="upper-left-pane"
+    class="filled upper left"
+    x="16" y="16" width="227.5" height="227.5"/>
+  <rect
+    id="upper-right-pane"
+    class="filled upper right"
+    x="268.5" y="16" width="227.5" height="227.5"/>
+  <rect
+    id="lower-left-pane"
+    class="filled lower left"
+    x="16" y="268.5" width="227.5" height="227.5"/>
+  <rect
+    id="lower-right-pane"
+    class="filled lower right"
+    x="268.5" y="268.5" width="227.5" height="227.5"/>
+</svg>

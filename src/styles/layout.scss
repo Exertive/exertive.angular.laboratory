@@ -1,0 +1,12 @@
+
+@mixin place($position, $display, $width, $height)
+{
+  position: $position;
+  box-sizing: border-box;
+  display: $display;
+  width: $width;
+  height: $height;
+  margin: 0;
+  padding: 0;
+}
+

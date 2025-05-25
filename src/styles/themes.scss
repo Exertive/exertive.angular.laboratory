@@ -1,0 +1,19 @@
+
+// Custom Theming for Angular Material
+
+@use '@angular/material' as material;
+
+html
+{
+  @include material.theme(
+    (
+      color:
+      (
+        theme-type: light,
+        primary:    material.$azure-palette,
+        tertiary:   material.$blue-palette,
+      ),
+      typography:   'Open Sans',
+      density:      0,
+    ));
+}

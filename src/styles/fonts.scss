@@ -1,0 +1,14 @@
+
+// Forward the required font stylesheets
+
+// Open Sans by Steve Matteson from Google Fonts.
+@forward "./fonts/open";
+
+// Anonymous Pro by Mark Simonson from Google Fonts.
+@forward "./fonts/anonymous";
+
+// Gotham ScreenSmart by Hoefler & Co installed locally in 'assets/fonts'.
+@forward './fonts/gotham';
+
+// Idlewild by Hoefler & Co installed locally in 'assets/fonts'.
+@forward './fonts/idlewild';

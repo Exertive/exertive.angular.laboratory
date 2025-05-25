@@ -1,0 +1,37 @@
+
+// Import Hoefler & Co Idlewild Screensmart Web font faces
+
+@mixin idlewild-light()
+{
+  font-family: Idlewild, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin idlewild-book()
+{
+  font-family: Idlewild, 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin idlewild-medium()
+{
+  font-family: Idlewild, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin idlewild-bold()
+{
+  font-family: Idlewild, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin idlewild-black()
+{
+  font-family: Idlewild, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
