@@ -125,6 +125,8 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   private static readonly _TitleText: string = 'Angular Laboratory';
 
+  private static readonly _DescriptionText: string = 'This release of the Exertive Angular Laboratory app includes the following experimental features:';
+
   private static readonly _ExertiveLogoImageSrc: string = 'assets/images/vectors/logos/exertive_lateral_logo_image.svg';
 
   private static readonly _ExertiveLogoImageWidth: number = 1024;

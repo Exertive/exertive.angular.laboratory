@@ -1,22 +1,73 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "isolatedModules": true,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "outDir": "./dist/output",
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@asset/*": [
+        "./projects/asset/src/lib/*"
+      ],
+      "@composition/*": [
+        "./projects/composition/src/lib/*"
+      ],
+      "@image/*": [
+        "./projects/image/src/lib/*"
+      ],
+      "@state/*": [
+        "./projects/state/src/lib/*"
+      ],
+      "@supervision/*": [
+        "./projects/supervision/src/lib/*"
+      ],
+      "asset": [
+        "./dist/asset"
+      ],
+      "composition": [
+        "./dist/composition"
+      ],
+      "image": [
+        "./dist/image"
+      ],
+      "imaging": [
+        "./dist/imaging"
+      ],
+      "menu": [
+        "./dist/menu"
+      ],
+      "state": [
+        "./dist/state"
+      ],
+      "supervision": [
+        "./dist/supervision"
+      ]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
