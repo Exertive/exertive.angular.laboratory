@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exertive.angular.laboratory": {
+    "laboratory": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/exertive.angular.laboratory",
+            "outputPath": "dist/laboratory",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "exertive.angular.laboratory:build:production"
+              "buildTarget": "laboratory:build:production"
             },
             "development": {
-              "buildTarget": "exertive.angular.laboratory:build:development"
+              "buildTarget": "laboratory:build:development"
             }
           },
           "defaultConfiguration": "development"
