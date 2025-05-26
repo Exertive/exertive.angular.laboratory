@@ -40,13 +40,8 @@
             ],
             "assets": [
               "src/favicon.ico",
-              "src/assets",
               "src/staticwebapp.config.json",
-              "src/web.config",
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
