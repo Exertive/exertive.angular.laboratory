@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/output
 /bazel-out
 
 # Node
@@ -41,4 +42,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.env
