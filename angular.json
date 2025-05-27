@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "laboratory": {
+    "exertive-angular-laboratory": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -25,7 +25,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/laboratory",
+              "base": "dist/exertive-angular-laboratory",
               "browser": ""
             },
             "index": "src/index.html",
@@ -68,6 +68,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "docker": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -76,10 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "laboratory:build:production"
+              "buildTarget": "exertive-angular-laboratory:build:production"
             },
             "development": {
-              "buildTarget": "laboratory:build:development"
+              "buildTarget": "exertive-angular-laboratory:build:development"
             }
           },
           "defaultConfiguration": "development"
