@@ -1,3 +1,5 @@
+#
+
 az containerapp up `
   --name exertive-angular-laboratory `
   --resource-group exertive-application-resources `

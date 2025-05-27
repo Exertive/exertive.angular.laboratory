@@ -29,7 +29,7 @@ FROM nginx:1-alpine-slim
 
 # Copy the custom Nginx configuration file to the container in the
 # default location
-COPY nginx/nginx.http.conf /etc/nginx/nginx.conf
+COPY .config/nginx/nginx.http.conf /etc/nginx/nginx.conf
 
 # Copy the build output to the default Nginx folder
 COPY --from=0 /app/dist/exertive-angular-laboratory /usr/share/nginx/html
