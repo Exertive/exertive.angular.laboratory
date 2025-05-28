@@ -9,17 +9,17 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
 
-    "build-docker": "echo Building the Exertive Angular Laboratory app for deployment to a Docker container. && ng build --configuration .config/docker",
+    "build-docker": "echo Building the Exertive Angular Laboratory app for deployment to a Docker container. && ng build --configuration docker",
 
-    "build-image": "echo Building the Docker image. && .config/docker build -t exertive-angular-laboratory .",
-    "remove-image": "echo Removing the Docker image. && .config/docker rmi exertive-angular-laboratory",
-    "run-container": "echo Running the Docker container exposing port 8080. && .config/docker run --name exertive-angular-laboratory -d -p 8080:80 exertive-angular-laboratory",
-    "remove-container": "echo Removing the Docker container. && .config/docker rm -f exertive-angular-laboratory",
+    "build-image": "echo Building the Docker image. && docker build -t exertive-angular-laboratory .",
+    "remove-image": "echo Removing the Docker image. && docker rmi exertive-angular-laboratory",
+    "run-container": "echo Running the Docker container exposing port 8080. && docker run --name exertive-angular-laboratory -d -p 8080:80 exertive-angular-laboratory",
+    "remove-container": "echo Removing the Docker container. && docker rm -f exertive-angular-laboratory",
     "containerize": "echo Building the Docker image. && npm run build-image",
     "recontainerize": "echo Removing the Docker container and rebuilding. && npm run remove-container && npm run build-image",
 
-    "tag": ".config/docker tag exertive-angular-laboratory exertive.azurecr.io/exertive-angular-laboratory:latest",
-    "push": ".config/docker login exertive.azurecr.io && docker push exertive.azurecr.io/exertive-angular-laboratory:latest",
+    "tag": "docker tag exertive-angular-laboratory exertive.azurecr.io/exertive-angular-laboratory:latest",
+    "push": "docker login exertive.azurecr.io && docker push exertive.azurecr.io/exertive-angular-laboratory:latest",
 
     "publish": "az container create --resource-group exertive-application-resources --name exertive-angular-laboratory --image exertive/exertive-angular-laboratory:latest --os-type Linux --cpu 1 --memory 1.5 --ports 80"
   },
