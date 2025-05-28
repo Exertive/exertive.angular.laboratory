@@ -1,0 +1,32 @@
+
+<div class="app angular panel" *ngIf="composed">
+  <div class="container" [ngStyle]="panelCssStyle">
+    <div class="content polyptych centered">
+      <div class="left outer panel">
+        <div class="build using text">
+          <span [innerHTML]="builtUsingText"></span>
+        </div>
+      </div>
+      <div class="left inner panel">
+        <div class="angular shield image" [ngStyle]="imageCssStyle">
+          <img
+            [ngSrc]="angularImageSrc"
+            [width]="angularIntrinsicImageWidth"
+            [height]="angularIntrinsicImageHeight"
+            [priority]="true"
+            [alt]="angularImageText"/>
+        </div>
+      </div>
+      <div class="right inner panel">
+        <div class="angular text">
+          <span [innerHTML]="angularText"></span>
+        </div>
+      </div>
+      <div class="right outer panel">
+        <div class="version text">
+          <span [innerHTML]="versionText"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

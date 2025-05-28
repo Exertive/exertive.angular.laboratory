@@ -1,0 +1,53 @@
+
+<div class="app github panel" *ngIf="composed">
+  <div class="container" [ngStyle]="panelCssStyle">
+    <div class="content triptych left aligned">
+      <div class="left panel">
+        <div class="github logo image" [ngStyle]="imageCssStyle">
+          <img
+            [ngSrc]="githubImageSrc"
+            [width]="githubIntrinsicImageWidth"
+            [height]="githubIntrinsicImageHeight"
+            [priority]="true"
+            [alt]="githubImageText"/>
+        </div>
+      </div>
+      <div class="center panel">
+        <div class="repository link">
+          <a [href]="repository" target="_blank" rel="noopener noreferrer">
+            {{repository}}
+          </a>
+        </div>
+      </div>
+      <div class="right panel">
+        <div class="new tab icon">
+          <svg
+            id="NewTabIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64">
+            <defs>
+              <style>
+                .outlined
+                {
+                  fill: none;
+                  stroke: currentColor;
+                  stroke-width: 3px;
+                  stroke-opacity: 1;
+                  stroke-linecap: butt;
+                  stroke-dasharray: none;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                }
+              </style>
+            </defs>
+            <g>
+              <polyline class="outlined" points="56 28 56 56 8 56 8 8 36 8"/>
+              <polyline class="outlined" points="44 8 56 8 56 20"/>
+              <line class="outlined" x1="32" y1="32" x2="56" y2="8"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

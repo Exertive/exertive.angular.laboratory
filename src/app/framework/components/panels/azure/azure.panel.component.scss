@@ -1,0 +1,103 @@
+
+@use "../../../../../styles/colors" as colors;
+@use "../../../../../styles/fonts" as fonts;
+@use "../../../../../styles/layout" as layout;
+@use "../../../../../styles/material" as material;
+
+@use "sass:color" as color;
+
+:host
+{
+  @include layout.place(relative, block, auto, auto);
+}
+
+div.app
+{
+  &.github.panel
+  {
+    @include layout.place(relative, block, auto, auto);
+    & > div.container
+    {
+      @include layout.place(relative, flex, auto, auto);
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      & > div.content.triptych
+      {
+        @include layout.place(relative, grid, auto, auto);
+        grid-template-rows: auto;
+        grid-template-columns: 32px auto 24px;
+        & > div.panel
+        {
+          @include layout.place(relative, block, auto, auto);
+          padding: 2px;
+          grid-row: 1;
+
+          @include fonts.gotham-light();
+          font-size: 12px;
+          line-height: normal;
+          -webkit-font-smoothing: antialiased;
+          text-align: left;
+          text-wrap: nowrap;
+
+          &.left
+          {
+            grid-column: 1;
+          }
+          &.center
+          {
+            grid-column: 2;
+          }
+          &.right
+          {
+            grid-column: 3;
+          }
+        }
+        & > div.left.panel
+        {
+          padding-top: 0;
+          & > div.github.logo.image
+          {
+            @include layout.place(relative, flex, auto, auto);
+            flex-flow: row nowrap;
+            & > img
+            {
+              width: inherit;
+              height: inherit;
+              color: colors.$theme-charcoal;
+            }
+          }
+        }
+        & > div.center.panel
+        {
+          padding-top: 6px;
+          & > div.repository.link
+          {
+            & > a
+            {
+              color: colors.$theme-charcoal;
+              text-decoration: none;
+            }
+          }
+        }
+        & > div.right.panel
+        {
+          padding-top: 2px;
+          & > div.new.tab.icon
+          {
+            @include layout.place(relative, flex, 24px, 24px);
+            padding: 4px 0;
+            flex-flow: row nowrap;
+            & > svg
+            {
+              width: 16px;
+              height: 16px;
+              color: colors.$theme-charcoal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
