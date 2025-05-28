@@ -199,6 +199,25 @@ div.app.landing.page
               }
             }
           }
+          & > section.footer
+          {
+            padding: 16px 0;
+            & > div.content.panel
+            {
+              @include layout.place(relative, block, 100%, 100%);
+              & > div.notes.text
+              {
+                @include layout.place(relative, block, auto, auto);
+                color: colors.$theme-charcoal;
+                @include fonts.gotham-light();
+                font-size: 12px;
+                line-height: 15px;
+                text-align: left;
+                text-transform: none;
+                text-wrap: auto;
+              }
+            }
+          }
         }
       }
       & > section.footer

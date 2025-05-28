@@ -92,6 +92,11 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
     return this._introductionText;
   }
 
+  public get notesText(): SafeHtml
+  {
+    return this._notesText;
+  }
+
   public get exertiveLogoImageSrc(): string
   {
     return ExperimentPageComponent._ExertiveLogoImageSrc;
@@ -155,7 +160,10 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
       'as a Container App using a minimal Docker Linux container. Previous attempts',
       'to deploy it as a Static Web App or a \'standard\' Web App failed after',
       'many unsucessful attempts, largely because of issues with assigning a custom',
-      'domain name.'
+      'domain name. Successive reployments are performed manually usualing PowerShell',
+      'scripts which first rebuild, retag and push an updated Docker image to the',
+      'Azure container, then update the Container App using \'az containerapp update\'.',
+      'Click on the &#9432; buttton for more information on the image an its dimensions.'
     ].join(' ');
 
   private static readonly _ExertiveLogoImageSrc: string = 'assets/images/vectors/logos/exertive_lateral_logo_image.svg';
