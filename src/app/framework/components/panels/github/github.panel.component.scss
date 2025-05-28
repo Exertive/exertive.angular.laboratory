@@ -13,65 +13,86 @@
 
 div.app
 {
-  &.angular.panel
+  &.github.panel
   {
     @include layout.place(relative, block, auto, auto);
     & > div.container
     {
       @include layout.place(relative, flex, auto, auto);
       flex-flow: row nowrap;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      & > div.content
+      & > div.content.triptych
       {
         @include layout.place(relative, grid, auto, auto);
-        padding-top: 8px;
         grid-template-rows: auto;
-        grid-template-columns: repeat(4, min-content);
+        grid-template-columns: 32px auto 24px;
         & > div.panel
         {
           @include layout.place(relative, block, auto, auto);
           padding: 2px;
           grid-row: 1;
 
-          @include fonts.open-sans-regular();
+          @include fonts.gotham-light();
           font-size: 12px;
           line-height: normal;
           -webkit-font-smoothing: antialiased;
           text-align: left;
           text-wrap: nowrap;
 
-          &.outer.left
+          &.left
           {
             grid-column: 1;
-            padding-top: 4px;
           }
-          &.inner.left
+          &.center
           {
-            padding-left: 4px;
             grid-column: 2;
           }
-          &.inner.right
+          &.right
           {
             grid-column: 3;
-            padding-top: 4px;
-            @include fonts.open-sans-semi-bold();
-          }
-          &.outer.right
-          {
-            padding-top: 4px;
-            grid-column: 4;
           }
         }
-        & > div.inner.left.panel
+        & > div.left.panel
         {
-          & > div.angular.shield.image
+          padding-top: 0;
+          & > div.github.logo.image
           {
-            @include layout.place(relative, grid, auto, auto);
+            @include layout.place(relative, flex, auto, auto);
+            flex-flow: row nowrap;
             & > img
             {
               width: inherit;
               height: inherit;
+              color: colors.$theme-charcoal;
+            }
+          }
+        }
+        & > div.center.panel
+        {
+          padding-top: 6px;
+          & > div.repository.link
+          {
+            & > a
+            {
+              color: colors.$theme-charcoal;
+              text-decoration: none;
+            }
+          }
+        }
+        & > div.right.panel
+        {
+          padding-top: 2px;
+          & > div.new.tab.icon
+          {
+            @include layout.place(relative, flex, 24px, 24px);
+            padding: 4px 0;
+            flex-flow: row nowrap;
+            & > svg
+            {
+              width: 16px;
+              height: 16px;
+              color: colors.$theme-charcoal;
             }
           }
         }

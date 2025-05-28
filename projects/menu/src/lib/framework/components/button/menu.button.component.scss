@@ -13,65 +13,19 @@ div.menu.button
 {
   @include layout.place(relative, block, 100%, 100%);
   cursor: pointer;
-  z-index: 100;
-  transition: height 0.3s;
-  & > div.icon
+  & > div.icon,
+  & > div.icon.closed,
   {
-    @include layout.place(relative, block, 32px, 24px);
-    margin: calc((56px - 24px) / 2) calc(8px);
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
+    @include layout.place(relative, flex, 48px, 25px);
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    opacity: 0.60;
-    & > span
-    {
-      display: block;
-      position: absolute;
-      height: 3px;
-      width: 100%;
-      background: colors.$theme-charcoal;
-      border-radius: 0;
-      opacity: 0.90;
-      left: 0;
-      transform: rotate(0deg);
-      transition: .25s ease-in-out;
-    }
-    & > span:nth-child(1)
-    {
-      top: 0;
-    }
-    & > span:nth-child(2),
-    & > span:nth-child(3)
-    {
-      top: 12px;
-    }
-    & > span:nth-child(4)
-    {
-      top: 24px;
-    }
+    opacity: 0.80;
   }
   & > div.icon.open
   {
-    & > span:nth-child(1)
-    {
-      top: 12px;
-      width: 0;
-      left: 50%;
-    }
-    & > span:nth-child(2)
-    {
-      transform: rotate(45deg);
-    }
-    & > span:nth-child(3)
-    {
-      transform: rotate(-45deg);
-    }
-    & > span:nth-child(4)
-    {
-      top: 12px;
-      width: 0;
-      left: 50%;
-    }
+    @include layout.place(relative, flex, 48px, 25px);
   }
   & div.icon:hover
   {

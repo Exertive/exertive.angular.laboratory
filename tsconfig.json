@@ -35,6 +35,9 @@
       "@image/*": [
         "./projects/image/src/lib/*"
       ],
+      "@menu/*": [
+        "./projects/menu/src/lib/*"
+      ],
       "@state/*": [
         "./projects/state/src/lib/*"
       ],

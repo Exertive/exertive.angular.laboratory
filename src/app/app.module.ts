@@ -35,9 +35,13 @@ import { RoutingModule } from '@app/framework/routing/routing.module';
 // Import Component Dependencies
 
 import { RootComponent } from '@app/framework/components/root/root.component';
-import { LandingPageComponent } from '@app/framework/components/pages/landing/landing.page.component';
+import { ExperimentPageComponent } from '@app/framework/components/pages/experiments/experiment.page.component';
 
+import { MenuButtonComponent } from '@menu/framework/components/button/menu.button.component';
+
+import { GitHubPanelComponent } from '@app/framework/components/panels/github/github.panel.component';
 import { AngularPanelComponent } from '@app/framework/components/panels/angular/angular.panel.component';
+import { AzurePanelComponent } from '@app/framework/components/panels/azure/azure.panel.component';
 import { UserAgentPanelComponent } from '@app/framework/components/panels/useragent/user.agent.panel.component';
 
 import { BitmapImageComponent } from '@image/framework/components/images/bitmap/bitmap.image.component';
@@ -61,7 +65,7 @@ const imageKitConfiguration: ImageKitConfiguration =
     declarations:
       [
         RootComponent,
-        LandingPageComponent
+        ExperimentPageComponent
       ],
     imports:
       [
@@ -76,7 +80,10 @@ const imageKitConfiguration: ImageKitConfiguration =
         // Import Routing Module
         RoutingModule,
         // Import Standalone Components
+        MenuButtonComponent,
+        GitHubPanelComponent,
         AngularPanelComponent,
+        AzurePanelComponent,
         UserAgentPanelComponent,
         BitmapImageComponent,
       ],

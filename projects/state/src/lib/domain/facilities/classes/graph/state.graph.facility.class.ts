@@ -1,15 +1,16 @@
 
-import { StateException } from '@imaging/domain/primitives/classes/exceptions/state/state.exception.primitive.class';
+import { StateException } from '@state/domain/primitives/exception/state.exception.primitive.class';
 
-import { IException } from '@imaging/domain/primitives/interfaces/exceptions/exception/exception.primitive.interface';
-import { IGraph } from '@imaging/domain/facilities/interfaces/graph/state.graph.facility.interface';
+import { IException } from '@supervision/domain/primitives/interfaces/exception/exception.primitive.interface';
+import { IGraph } from '@state/domain/facilities/interfaces/graph/state.graph.facility.interface';
 
-import { Domain } from '@imaging//domain/types/state/domain/state.domain.type';
-import { Transitions } from '@imaging/domain/types/state/transitions/transitions.type';
+import { Domain } from '@state/domain/types/domain/state.domain.type';
+import { Transitions } from '@state/domain/types/transitions/transitions.type';
 
 // The Class Definition
 
-// noinspection UnnecessaryLocalVariableJS
+// noinspection UnnecessaryLocalVariableJS,JSUnusedGlobalSymbols
+
 export class Graph implements IGraph
 {
 
@@ -76,63 +77,3 @@ export class Graph implements IGraph
   }
 
 }
-
-// <exclude>
-// export class Graph<TState extends Domain<TState> & PendingState<TState> & ErrorState<TState>> implements IGraph<TState>
-// {
-//
-//   Public Instance Properties
-//
-//   public get domain(): TState
-//   {
-//     return this._domain;
-//   }
-//
-//   public get state(): State<TState>
-//   {
-//     return this._state;
-//   }
-//
-//   public get transitions(): Transitions<TState>
-//   {
-//     return this._transitions;
-//   }
-//
-//   public get exceptions(): IException[]
-//   {
-//     return this._exceptions;
-//   }
-//
-//   Public Instance Properties
-//
-//   private readonly _domain: TState;
-//
-//   private _state: State<TState>;
-//
-//   private readonly _transitions: Transitions<TState>;
-//
-//   private readonly _exceptions: IException[];
-//
-//   public constructor(domain: TState, transitions: Transitions<TState>)
-//   {
-//     this._domain = domain;
-//     this._state = this.basis.Pending;
-//     this._transitions = transitions;
-//     this._exceptions = [];
-//   }
-//
-//   public transition(state: State<TState>): IGraph<TState>
-//   {
-//     if (state === this.state || this.transitions[this.state].includes(state))
-//     {
-//       this._state = state;
-//       return this;
-//     }
-//     const origin: State<TState> = this.state as State<TState>;
-//     const destination: State<TState> = state as State<TState>;
-//     const exceptions: IException = new StateException(origin, destination);
-//     this.exceptions.push(exceptions);
-//     return this;
-//   }
-//
-// }

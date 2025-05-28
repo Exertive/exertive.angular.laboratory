@@ -49,6 +49,7 @@ import { UserAgentService } from '@app/framework/services/useragent/user.agent.s
 
 import { AngularVersionInjectionToken } from '@app/framework/injection/tokens/angular/angular.version.injection.token';
 import { LogInjectionToken } from '@app/framework/injection/tokens/log/log.injection.token';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 // The Component Definition
 
@@ -61,12 +62,12 @@ import { LogInjectionToken } from '@app/framework/injection/tokens/log/log.injec
 
 @Component(
   {
-    selector:    'app-landing-page',
-    templateUrl: 'landing.page.component.html',
-    styleUrl:    'landing.page.component.scss',
+    selector:    'experiments-page',
+    templateUrl: 'experiment.page.component.html',
+    styleUrl:    'experiment.page.component.scss',
     standalone:  false
   })
-export class LandingPageComponent extends Composite implements OnInit, AfterViewInit, AfterViewChecked, OnDestroy
+export class ExperimentPageComponent extends Composite implements OnInit, AfterViewInit, AfterViewChecked, OnDestroy
 {
 
   // Public Instance Properties
@@ -83,27 +84,37 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   public get titleText(): string
   {
-    return LandingPageComponent._TitleText;
+    return ExperimentPageComponent._TitleText;
+  }
+
+  public get introductionText(): SafeHtml
+  {
+    return this._introductionText;
   }
 
   public get exertiveLogoImageSrc(): string
   {
-    return LandingPageComponent._ExertiveLogoImageSrc;
+    return ExperimentPageComponent._ExertiveLogoImageSrc;
   }
 
   public get exertiveLogoImageWidth(): number
   {
-    return LandingPageComponent._ExertiveLogoImageWidth;
+    return ExperimentPageComponent._ExertiveLogoImageWidth;
   }
 
   public get exertiveLogoImageHeight(): number
   {
-    return LandingPageComponent._ExertiveLogoImageHeight;
+    return ExperimentPageComponent._ExertiveLogoImageHeight;
   }
 
   public get exertiveLogoImageAspectRatio(): number
   {
-    return LandingPageComponent._ExertiveLogoImageAspectRatio;
+    return ExperimentPageComponent._ExertiveLogoImageAspectRatio;
+  }
+
+  public get githubRepository(): string
+  {
+    return ExperimentPageComponent._GitHubRepository;
   }
 
   public get exertiveLogoCssStyle(): CssStyle
@@ -123,9 +134,20 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   // Private Static Fields
 
-  private static readonly _TitleText: string = 'Angular Laboratory';
+  private static readonly _TitleText: string = 'Exertive Angular Laboratory';
 
-  private static readonly _DescriptionText: string = 'This release of the Exertive Angular Laboratory app includes the following experimental features:';
+  private static readonly _IntroductionText: string =
+    [
+      'This release of the Exertive Angular Laboratory application',
+      'tests implementation of a Component which uses the new Angular',
+      'Signals API for the input and output of values to and from the Component,',
+      'and computed Signals within it. The Component also uses \'effects\'',
+      'in place of the customary Lifecycle Event Handlers.',
+      'The Component under test is an Image Component which itself tests the',
+      'retrieval and rendering of a \'responsive\' image. The ImageKit API is',
+      'used to optionally scale and crop an image (see https://imagekit.io) to' +
+      'minimize the amount of data retrieved from remote storage.'
+    ].join(' ');
 
   private static readonly _ExertiveLogoImageSrc: string = 'assets/images/vectors/logos/exertive_lateral_logo_image.svg';
 
@@ -133,7 +155,9 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   private static readonly _ExertiveLogoImageHeight: number = 96;
 
-  private static readonly _ExertiveLogoImageAspectRatio: number = LandingPageComponent.calculateExertiveLogoAspectRatio();
+  private static readonly _ExertiveLogoImageAspectRatio: number = ExperimentPageComponent.calculateExertiveLogoAspectRatio();
+
+  private static readonly _GitHubRepository: string = 'https://github.com/exertive/exertive.angular.laboratory.git';
 
   // Private Instance Properties
 
@@ -168,6 +192,8 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   private _cssStyle: ICssStyle;
 
+  private readonly _introductionText: SafeHtml;
+
   private readonly _bitmapImage: IBitmapImage;
 
   private readonly _angularVersion: string | null;
@@ -182,6 +208,8 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   private readonly _router: Router;
 
+  private readonly _sanitizer: DomSanitizer;
+
   private readonly _useragentService: UserAgentService;
 
   // Public Constructor
@@ -194,6 +222,7 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
     injector: Injector,
     router: Router,
     renderer: Renderer2,
+    sanitizer: DomSanitizer,
     useragentService: UserAgentService,
     @Inject(AngularVersionInjectionToken) angularVersion$: BehaviorSubject<string>)
   {
@@ -204,8 +233,10 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
     this._imageManager = imageManager;
     this._renderer = renderer;
     this._router = router;
+    this._sanitizer = sanitizer;
     this._useragentService = useragentService;
 
+    this._introductionText = sanitizer.bypassSecurityTrustHtml(ExperimentPageComponent._IntroductionText);
     this._angularVersion = angularVersion$.getValue();
     this._bitmapImage = new BitmapImage(this.imageManager.lookup('WhiteHorseImage'));
     this._cssStyle = {};
@@ -293,7 +324,7 @@ export class LandingPageComponent extends Composite implements OnInit, AfterView
 
   private static calculateExertiveLogoAspectRatio() : number
   {
-    return LandingPageComponent._ExertiveLogoImageHeight / LandingPageComponent._ExertiveLogoImageWidth;
+    return ExperimentPageComponent._ExertiveLogoImageHeight / ExperimentPageComponent._ExertiveLogoImageWidth;
   }
 
 }

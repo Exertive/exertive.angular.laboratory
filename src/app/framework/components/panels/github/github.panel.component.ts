@@ -1,5 +1,5 @@
 
-// Import Angular Dependencies
+// Import GitHub Dependencies
 
 import { ChangeDetectorRef } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
@@ -15,38 +15,38 @@ import { NgStyle } from '@angular/common';
 
 // Import Class Dependencies
 
-import { CssStyle } from '../../../../../../projects/composition/src/lib/domain/primitives/classes/style/css.style.primitive.class';
+import { CssStyle } from '@composition/domain/primitives/classes/style/css.style.primitive.class';
 
 // Import Interface Dependencies
 
-import { ICssStyle } from '../../../../../../projects/composition/src/lib/domain/primitives/interfaces/style/css.style.primitive.interface';
+import { ICssStyle } from '@composition/domain/primitives/interfaces/style/css.style.primitive.interface';
 
 // The Component Definition
 
-// noinspection DuplicatedCode, JSUnusedLocalSymbols
+// noinspection DuplicatedCode, JSUnusedLocalSymbols, JSUnusedGlobalSymbols
 
 @Component(
   {
-    selector:         'angular-panel',
-    templateUrl:      'angular.panel.component.html',
-    styleUrl:         'angular.panel.component.scss',
+    selector:         'github-panel',
+    templateUrl:      'github.panel.component.html',
+    styleUrl:         'github.panel.component.scss',
     standalone:       true,
     imports:          [ NgIf, NgOptimizedImage, NgStyle ],
     changeDetection:  ChangeDetectionStrategy.OnPush
   })
-export class AngularPanelComponent implements OnInit, OnDestroy
+export class GitHubPanelComponent implements OnInit, OnDestroy
 {
 
   // Public Instance Properties
 
   @Input()
-  public get version(): string
+  public get repository(): string
   {
-    return this._version!;
+    return this._repository!;
   }
-  public set version(version: string)
+  public set repository(version: string)
   {
-    this._version = version;
+    this._repository = version;
   }
 
   @Input()
@@ -69,49 +69,34 @@ export class AngularPanelComponent implements OnInit, OnDestroy
     this._height = height;
   }
 
-  public get builtUsingText(): string
+  public get githubImageSrc(): string
   {
-    return AngularPanelComponent._BuiltUsingText;
+    return GitHubPanelComponent._GitHubImageSrc;
   }
 
-  public get angularImageSrc(): string
+  public get githubImageWidth(): number
   {
-    return AngularPanelComponent._AngularImageSrc;
+    return GitHubPanelComponent._GitHubImageWidth;
   }
 
-  public get angularImageWidth(): number
+  public get githubImageHeight(): number
   {
-    return AngularPanelComponent._AngularImageWidth;
+    return GitHubPanelComponent._GitHubImageHeight;
   }
 
-  public get angularImageHeight(): number
+  public get githubIntrinsicImageWidth(): number
   {
-    return AngularPanelComponent._AngularImageHeight;
+    return GitHubPanelComponent._GitHubIntrinsicImageWidth;
   }
 
-  public get angularIntrinsicImageWidth(): number
+  public get githubIntrinsicImageHeight(): number
   {
-    return AngularPanelComponent._AngularIntrinsicImageWidth;
+    return GitHubPanelComponent._GitHubIntrinsicImageHeight;
   }
 
-  public get angularIntrinsicImageHeight(): number
+  public get githubImageText(): string
   {
-    return AngularPanelComponent._AngularIntrinsicImageHeight;
-  }
-
-  public get angularImageText(): string
-  {
-    return AngularPanelComponent._AngularImageText;
-  }
-
-  public get angularText(): string
-  {
-    return AngularPanelComponent._AngularText;
-  }
-
-  public get versionText(): string
-  {
-    return this._versionText!;
+    return GitHubPanelComponent._GitHubImageText;
   }
 
   public get cssStyle(): ICssStyle
@@ -148,13 +133,11 @@ export class AngularPanelComponent implements OnInit, OnDestroy
 
   // Private Instance Fields
 
-  private _version: string | undefined;
+  private _repository: string | undefined;
 
   private _width: number | undefined;
 
   private _height: number | undefined;
-
-  private _versionText: string | undefined;
 
   private _cssStyle: ICssStyle | undefined;
 
@@ -168,25 +151,21 @@ export class AngularPanelComponent implements OnInit, OnDestroy
 
   // Private Static Field
 
-  private static readonly _DefaultWidth: number = 32;
+  private static readonly _DefaultWidth: number = 400;
 
-  private static readonly _DefaultHeight: number = 224;
+  private static readonly _DefaultHeight: number = 32;
 
-  private static readonly _BuiltUsingText: string = 'Built using';
+  private static readonly _GitHubImageText: string = 'GitHub';
 
-  private static readonly _AngularImageText: string = 'Angular';
+  private static readonly _GitHubImageSrc: string = 'assets/images/vectors/logos/github_vector_logo_image.svg';
 
-  private static readonly _AngularImageSrc: string = 'assets/animations/angular_shield_animation.svg';
+  private static readonly _GitHubIntrinsicImageWidth: number = 256;
 
-  private static readonly _AngularIntrinsicImageWidth: number = 400;
+  private static readonly _GitHubIntrinsicImageHeight: number = 256;
 
-  private static readonly _AngularIntrinsicImageHeight: number = 400;
+  private static readonly _GitHubImageWidth: number = 24;
 
-  private static readonly _AngularImageWidth: number = 24;
-
-  private static readonly _AngularImageHeight: number = 24;
-
-  private static readonly _AngularText: string = 'Angular';
+  private static readonly _GitHubImageHeight: number = 24;
 
   // Public Instance Constructor
 
@@ -203,7 +182,7 @@ export class AngularPanelComponent implements OnInit, OnDestroy
 
   // Public Instance Methods
 
-  // Angular Lifecycle Event Handlers
+  // GitHub Lifecycle Event Handlers
 
   public ngOnInit(): void
   {
@@ -225,9 +204,8 @@ export class AngularPanelComponent implements OnInit, OnDestroy
 
   public initialize(): boolean
   {
-    this._width = !(this._width === undefined) ? this._width : AngularPanelComponent._DefaultWidth;
-    this._height = !(this._height === undefined) ? this._height : AngularPanelComponent._DefaultHeight;
-    this._versionText = !(this._version === undefined) ? '(Version ' + this._version + ')' : '';
+    this._width = !(this._width === undefined) ? this._width : GitHubPanelComponent._DefaultWidth;
+    this._height = !(this._height === undefined) ? this._height : GitHubPanelComponent._DefaultHeight;
     return true;
   }
 
@@ -243,8 +221,8 @@ export class AngularPanelComponent implements OnInit, OnDestroy
       panelCssStyle['width'] = this.width + 'px';
       panelCssStyle['height'] = this.height + 'px';
 
-      imageCssStyle['width'] = this.angularImageWidth + 'px';
-      panelCssStyle['height'] = this.angularImageHeight + 'px';
+      imageCssStyle['width'] = this.githubImageWidth + 'px';
+      imageCssStyle['height'] = this.githubImageHeight + 'px';
 
       return true;
     }
@@ -263,8 +241,8 @@ export class AngularPanelComponent implements OnInit, OnDestroy
   {
     const buttonWidth: number = this.width;
     const buttonHeight: number = this.height;
-    const iconWidth: number = this.angularImageWidth;
-    const iconHeight: number = this.angularImageHeight;
+    const iconWidth: number = this.githubImageWidth;
+    const iconHeight: number = this.githubImageHeight;
     const horizontalGap: number = (buttonWidth - iconWidth) / 2;
     const verticalGap: number = (buttonHeight - iconHeight) / 2;
     return [verticalGap + 'px', horizontalGap + 'px'].join(' ');

@@ -4,17 +4,32 @@
     <div class="content sectional">
       <section class="header">
         <div class="content polyptych">
-          <div class="exertive logo image" [ngStyle]="exertiveLogoCssStyle">
-            <img
-              [ngSrc]="exertiveLogoImageSrc"
-              [width]="exertiveLogoImageWidth"
-              [height]="exertiveLogoImageHeight"
-              [priority]="true"
-              alt="">
+          <div class="outer left panel">
+            <div class="exertive logo image" [ngStyle]="exertiveLogoCssStyle">
+              <img
+                [ngSrc]="exertiveLogoImageSrc"
+                [width]="exertiveLogoImageWidth"
+                [height]="exertiveLogoImageHeight"
+                [priority]="true"
+                alt="">
+            </div>
           </div>
-          <div class="title text">{{titleText}}</div>
-          <div class="spacer"></div>
-          <div class="actions">
+          <div class="inner left panel">
+            <div class="title text">{{titleText}}</div>
+          </div>
+          <div class="inner right panel">
+            <div class="github panel">
+              <github-panel
+                [repository]="githubRepository"
+                [width]="416"
+                [height]="32">
+              </github-panel>
+            </div>
+          </div>
+          <div class="outer right panel">
+            <div class="actions">
+              <menu-button></menu-button>
+            </div>
           </div>
         </div>
       </section>
@@ -25,7 +40,16 @@
           is added then it must be declared as the (#)ContentComponent
           template variable.
           -->
-          <section class="header"></section>
+          <section class="header">
+            <div class="content diptych">
+              <div class="left panel">
+                <div class="introduction text">
+                  <span [innerHTML]="introductionText"></span>
+                </div>
+              </div>
+              <div class="right panel"></div>
+            </div>
+          </section>
           <section class="body">
             <!--
             <bitmap-image [image]="heroImage" [loaded]="heroImageLoaded"></bitmap-image>
@@ -44,11 +68,16 @@
               [height]="32">
             </angular-panel>
           </div>
-          <div class="center panel"></div>
+          <div class="center panel">
+            <azure-panel
+              [width]="480"
+              [height]="32">
+            </azure-panel>
+          </div>
           <div class="right panel">
             <user-agent-panel
               [agent]="userAgent"
-              [width]="640"
+              [width]="512"
               [height]="32">
             </user-agent-panel>
           </div>

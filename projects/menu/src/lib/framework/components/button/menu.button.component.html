@@ -2,10 +2,168 @@
 <div
   class="menu button"
   (click)="onClick($event)">
-  <div [ngClass]="cssClass['button']">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="icon" [ngClass]="cssClass['icon']">
+    <svg
+      id="MenuButtonIcon"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 48 25">
+      <defs>
+        <style>
+          .filled.charcoal
+          {
+            fill: #484848;
+            stroke: none;
+          }
+          .bar, .bar.closed {
+            x: 0;
+            width: 48px;
+            height: 3px;
+            rotate: 0;
+            transform-origin: 50% 50%;
+          }
+          .upper.bar
+          {
+            y: 0;
+          }
+          .middle.bar
+          {
+            y: 11px;
+          }
+          .lower.bar
+          {
+            y: 22px;
+          }
+          .upper.bar.open
+          {
+            x: 8px;
+            y: 11px;
+            width: 32px;
+            rotate: 45deg;
+            <!--
+            Transform the diagonal bar to a horizontal bar by:
+            1) Rotating the bar.
+            2) Adjusting the vertical position;
+            3) Adjusting the width and horizontal position;
+            -->
+            transition:
+              rotate 0ms ease-in 250ms,
+              y 250ms ease-in 250ms,
+              x 500ms ease-in 250ms,
+              width 500ms ease-in 250ms;
+          }
+          .middle.bar.open
+          {
+            x: 24px;
+            y: 11px;
+            width: 0;
+            <!--
+            Reveal the horizontal bar by:
+            1) Adjusting the width and horizontal position.
+            -->
+            transition:
+              x 0ms ease-in 250ms,
+              width 0ms ease-in 250ms;
+          }
+          .lower.bar.open
+          {
+            x: 8px;
+            y: 11px;
+            width: 32px;
+            rotate: -45deg;
+            <!--
+            Transform the diagonal bar to a horizontal bar by:
+            1) Rotating the bar.
+            2) Adjusting the vertical position;
+            3) Adjusting the width and horizontal position;
+            -->
+            transition:
+              rotate 0ms ease-in 250ms,
+              y 250ms ease-in 250ms,
+              x 500ms ease-in 250ms,
+              width 500ms ease-in 250ms;
+          }
+          .upper.bar.closed,
+          .lower.bar.closed
+          {
+            <!--
+            Transform the horizontal bar to a diagonal bar by:
+            1) Adjusting the width and horizontal position;
+            2) Adjusting the vertical position;
+            3) Rotating the bar.
+            -->
+            transition:
+              x 0ms ease-in 250ms,
+              width 0ms ease-in 250ms,
+              y 250ms ease-in 250ms,
+              rotate 500ms ease-in 250ms;
+          }
+          .middle.bar.closed
+          {
+            <!--
+            Hide the horizontal bar by:
+            1) Adjusting the width and horizontal position.
+            -->
+            transition:
+              x 0ms ease-in 250ms,
+              width 0ms ease-in 250ms;
+          }
+        </style>
+      </defs>
+      <g>
+        <rect
+          class="upper bar filled charcoal"
+          [ngClass]="cssClass['icon']"
+          x="0" y="0" width="48" height="3">
+        </rect>
+        <rect
+          class="middle bar filled charcoal"
+          [ngClass]="cssClass['icon']"
+          x="0" y="11" width="48" height="3"></rect>
+        <rect
+          class="lower bar filled charcoal"
+          [ngClass]="cssClass['icon']"
+          x="0" y="22" width="48" height="3">
+        </rect>
+      </g>
+      <!--
+      <g id="OpenIcon" *ngIf="open">
+        <rect id="UpperBar" class="filled charcoal" x="0" y="0" width="48" height="3">
+          <animate attributeName="width" from="48" to="32" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="0" to="8" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="y" from="0" to="10.5" begin="0s" dur="0.5s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 24 12" to="45 24 12" begin="0.5s" dur="0.5s" fill="freeze"/>
+        </rect>
+        <rect id="MiddleBar" class="filled charcoal" x="0" y="10.5" width="48" height="3">
+          <animate attributeName="width" from="48" to="0" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="0" to="24" begin="0s" dur="0.5s" fill="freeze"/>
+        </rect>
+        <rect id="LowerBar" class="filled charcoal" x="0" y="21" width="48" height="3" transform="rotate(-45 24 12)">
+          <animate attributeName="width" from="48" to="32" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="0" to="8" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="y" from="21" to="10.5" begin="0s" dur="0.5s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 24 12" to="-45 24 12" begin="0.5s" dur="0.5s" fill="freeze"/>
+        </rect>
+      </g>
+      <g id="ClosedIcon" *ngIf="closed">
+        <rect id="UpperBar" class="filled charcoal" x="8" y="10.5" width="32" height="3" transform="rotate(45 24 12)">
+          <animateTransform attributeName="transform" type="rotate" from="45 24 12" to="0 24 12" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="width" from="32" to="48" begin="0.5s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="8" to="1" begin="0.5s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="y" from="10.5" to="0" begin="0.5s" dur="0.5s" fill="freeze"/>
+        </rect>
+        <rect id="MiddleBar" class="filled charcoal" x="24" y="10.5" width="0" height="3">
+          <animate attributeName="width" from="0" to="48" begin="0" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="24" to="1" begin="0" dur="0.5s" fill="freeze"/>
+        </rect>
+        <rect id="LowerBar" class="filled charcoal" x="8" y="10.5" width="32" height="3">
+          <animateTransform attributeName="transform" type="rotate" from="-45 24 12" to="0 24 12" begin="0s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="width" from="32" to="48" begin="0.5s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="x" from="8" to="1" begin="0.5s" dur="0.5s" fill="freeze"/>
+          <animate attributeName="y" from="10.5" to="21" begin="0.5s" dur="0.5s" fill="freeze"/>
+        </rect>
+      </g>
+      -->
+    </svg>
   </div>
 </div>

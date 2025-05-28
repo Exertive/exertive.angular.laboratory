@@ -1,5 +1,5 @@
 
-// Import GitHub Dependencies
+// Import Azure Dependencies
 
 import { ChangeDetectorRef } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
@@ -27,27 +27,17 @@ import { ICssStyle } from '@composition/domain/primitives/interfaces/style/css.s
 
 @Component(
   {
-    selector:         'github-panel',
-    templateUrl:      'github.panel.component.html',
-    styleUrl:         'github.panel.component.scss',
+    selector:         'azure-panel',
+    templateUrl:      'azure.panel.component.html',
+    styleUrl:         'azure.panel.component.scss',
     standalone:       true,
     imports:          [ NgIf, NgOptimizedImage, NgStyle ],
     changeDetection:  ChangeDetectionStrategy.OnPush
   })
-export class GitHubPanelComponent implements OnInit, OnDestroy
+export class AzurePanelComponent implements OnInit, OnDestroy
 {
 
   // Public Instance Properties
-
-  @Input()
-  public get repository(): string
-  {
-    return this._repository!;
-  }
-  public set repository(version: string)
-  {
-    this._repository = version;
-  }
 
   @Input()
   public get width(): number
@@ -69,34 +59,69 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
     this._height = height;
   }
 
-  public get githubImageSrc(): string
+  public get hostedUsingText(): string
   {
-    return GitHubPanelComponent._GitHubImageSrc;
+    return AzurePanelComponent._HostedUsingText;
   }
 
-  public get githubImageWidth(): number
+  public get azureImageSrc(): string
   {
-    return GitHubPanelComponent._GitHubImageWidth;
+    return AzurePanelComponent._AzureImageSrc;
   }
 
-  public get githubImageHeight(): number
+  public get logoImageWidth(): number
   {
-    return GitHubPanelComponent._GitHubImageHeight;
+    return AzurePanelComponent._LogoImageWidth;
   }
 
-  public get githubIntrinsicImageWidth(): number
+  public get logoImageHeight(): number
   {
-    return GitHubPanelComponent._GitHubIntrinsicImageWidth;
+    return AzurePanelComponent._LogoImageHeight;
   }
 
-  public get githubIntrinsicImageHeight(): number
+  public get azureIntrinsicImageWidth(): number
   {
-    return GitHubPanelComponent._GitHubIntrinsicImageHeight;
+    return AzurePanelComponent._AzureIntrinsicImageWidth;
   }
 
-  public get githubImageText(): string
+  public get azureIntrinsicImageHeight(): number
   {
-    return GitHubPanelComponent._GitHubImageText;
+    return AzurePanelComponent._AzureIntrinsicImageHeight;
+  }
+
+  public get azureImageText(): string
+  {
+    return AzurePanelComponent._AzureImageText;
+  }
+
+  public get dockerImageSrc(): string
+  {
+    return AzurePanelComponent._DockerImageSrc;
+  }
+
+  public get dockerImageWidth(): number
+  {
+    return AzurePanelComponent._DockerImageWidth;
+  }
+
+  public get dockerImageHeight(): number
+  {
+    return AzurePanelComponent._DockerImageHeight;
+  }
+
+  public get dockerIntrinsicImageWidth(): number
+  {
+    return AzurePanelComponent._DockerIntrinsicImageWidth;
+  }
+
+  public get dockerIntrinsicImageHeight(): number
+  {
+    return AzurePanelComponent._DockerIntrinsicImageHeight;
+  }
+
+  public get dockerImageText(): string
+  {
+    return AzurePanelComponent._DockerImageText;
   }
 
   public get cssStyle(): ICssStyle
@@ -155,17 +180,31 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
 
   private static readonly _DefaultHeight: number = 32;
 
-  private static readonly _GitHubImageText: string = 'GitHub';
+  private static readonly _HostedUsingText: string = 'Hosted on <b>Microsoft Azure</b> using <b>Docker</b> Linux containers'
 
-  private static readonly _GitHubImageSrc: string = 'assets/images/vectors/logos/github_vector_logo_image.svg';
+  private static readonly _AzureImageText: string = 'Azure';
 
-  private static readonly _GitHubIntrinsicImageWidth: number = 256;
+  private static readonly _AzureImageSrc: string = 'assets/images/vectors/logos/azure_vector_logo_image.svg';
 
-  private static readonly _GitHubIntrinsicImageHeight: number = 256;
+  private static readonly _AzureIntrinsicImageWidth: number = 256;
 
-  private static readonly _GitHubImageWidth: number = 24;
+  private static readonly _AzureIntrinsicImageHeight: number = 256;
 
-  private static readonly _GitHubImageHeight: number = 24;
+  private static readonly _LogoImageWidth: number = 24;
+
+  private static readonly _LogoImageHeight: number = 24;
+
+  private static readonly _DockerImageText: string = 'Docker';
+
+  private static readonly _DockerImageSrc: string = 'assets/images/vectors/logos/docker_vector_logo_image.svg';
+
+  private static readonly _DockerIntrinsicImageWidth: number = 256;
+
+  private static readonly _DockerIntrinsicImageHeight: number = 256;
+
+  private static readonly _DockerImageWidth: number = 24;
+
+  private static readonly _DockerImageHeight: number = 24;
 
   // Public Instance Constructor
 
@@ -182,7 +221,7 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
 
   // Public Instance Methods
 
-  // GitHub Lifecycle Event Handlers
+  // Azure Lifecycle Event Handlers
 
   public ngOnInit(): void
   {
@@ -204,8 +243,8 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
 
   public initialize(): boolean
   {
-    this._width = !(this._width === undefined) ? this._width : GitHubPanelComponent._DefaultWidth;
-    this._height = !(this._height === undefined) ? this._height : GitHubPanelComponent._DefaultHeight;
+    this._width = !(this._width === undefined) ? this._width : AzurePanelComponent._DefaultWidth;
+    this._height = !(this._height === undefined) ? this._height : AzurePanelComponent._DefaultHeight;
     return true;
   }
 
@@ -221,8 +260,8 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
       panelCssStyle['width'] = this.width + 'px';
       panelCssStyle['height'] = this.height + 'px';
 
-      imageCssStyle['width'] = this.githubImageWidth + 'px';
-      imageCssStyle['height'] = this.githubImageHeight + 'px';
+      imageCssStyle['width'] = this.logoImageWidth + 'px';
+      imageCssStyle['height'] = this.logoImageHeight + 'px';
 
       return true;
     }
@@ -241,8 +280,8 @@ export class GitHubPanelComponent implements OnInit, OnDestroy
   {
     const buttonWidth: number = this.width;
     const buttonHeight: number = this.height;
-    const iconWidth: number = this.githubImageWidth;
-    const iconHeight: number = this.githubImageHeight;
+    const iconWidth: number = this.logoImageWidth;
+    const iconHeight: number = this.logoImageHeight;
     const horizontalGap: number = (buttonWidth - iconWidth) / 2;
     const verticalGap: number = (buttonHeight - iconHeight) / 2;
     return [verticalGap + 'px', horizontalGap + 'px'].join(' ');

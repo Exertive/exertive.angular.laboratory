@@ -4,18 +4,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 
-import { LandingPageComponent } from '@app/framework/components/pages/landing/landing.page.component';
+import { ExperimentPageComponent } from '@app/framework/components/pages/experiments/experiment.page.component';
 
 const routes: Routes =
   [
     {
       path: '',
-      redirectTo: 'landing',
+      redirectTo: 'experiments',
       pathMatch: 'full',
     },
     {
-      path: 'landing',
-      component: LandingPageComponent
+      path: 'experiments',
+      component: ExperimentPageComponent
     },
   ];
 
