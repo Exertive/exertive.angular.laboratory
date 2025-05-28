@@ -145,8 +145,17 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
       'in place of the customary Lifecycle Event Handlers.',
       'The Component under test is an Image Component which itself tests the',
       'retrieval and rendering of a \'responsive\' image. The ImageKit API is',
-      'used to optionally scale and crop an image (see https://imagekit.io) to' +
+      'used to optionally scale and crop an image (see https://imagekit.io) to',
       'minimize the amount of data retrieved from remote storage.'
+    ].join(' ');
+
+  private static readonly _NotesText: string =
+    [
+      'The Exertive Angular Laboratory application is hosted on Microsoft Azure ',
+      'as a Container App using a minimal Docker Linux container. Previous attempts',
+      'to deploy it as a Static Web App or a \'standard\' Web App failed after',
+      'many unsucessful attempts, largely because of issues with assigning a custom',
+      'domain name.'
     ].join(' ');
 
   private static readonly _ExertiveLogoImageSrc: string = 'assets/images/vectors/logos/exertive_lateral_logo_image.svg';
@@ -194,6 +203,8 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
 
   private readonly _introductionText: SafeHtml;
 
+  private readonly _notesText: SafeHtml;
+
   private readonly _bitmapImage: IBitmapImage;
 
   private readonly _angularVersion: string | null;
@@ -237,6 +248,7 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
     this._useragentService = useragentService;
 
     this._introductionText = sanitizer.bypassSecurityTrustHtml(ExperimentPageComponent._IntroductionText);
+    this._notesText = sanitizer.bypassSecurityTrustHtml(ExperimentPageComponent._NotesText);
     this._angularVersion = angularVersion$.getValue();
     this._bitmapImage = new BitmapImage(this.imageManager.lookup('WhiteHorseImage'));
     this._cssStyle = {};
