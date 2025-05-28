@@ -49,6 +49,7 @@ import { BitmapImageComponent } from '@image/framework/components/images/bitmap/
 // Import Utility Dependencies
 
 import { AssetManager } from '@asset/framework/managers/classes/asset/asset.manager.class';
+import { SymbolComponent } from '@app/framework/components/inline/symbol/symbol.component';
 
 //
 
@@ -86,6 +87,7 @@ const imageKitConfiguration: ImageKitConfiguration =
         AzurePanelComponent,
         UserAgentPanelComponent,
         BitmapImageComponent,
+        SymbolComponent,
       ],
     providers:
       [

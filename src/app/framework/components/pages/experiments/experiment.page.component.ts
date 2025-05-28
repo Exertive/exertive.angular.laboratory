@@ -17,6 +17,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { Router } from '@angular/router';
 
+import { DomSanitizer } from '@angular/platform-browser';
+import { SafeHtml } from '@angular/platform-browser';
+
 // Import Reactive Dependencies
 
 import { BehaviorSubject } from 'rxjs';
@@ -49,7 +52,6 @@ import { UserAgentService } from '@app/framework/services/useragent/user.agent.s
 
 import { AngularVersionInjectionToken } from '@app/framework/injection/tokens/angular/angular.version.injection.token';
 import { LogInjectionToken } from '@app/framework/injection/tokens/log/log.injection.token';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 // The Component Definition
 
@@ -159,11 +161,11 @@ export class ExperimentPageComponent extends Composite implements OnInit, AfterV
       'The Exertive Angular Laboratory application is hosted on Microsoft Azure ',
       'as a Container App using a minimal Docker Linux container. Previous attempts',
       'to deploy it as a Static Web App or a \'standard\' Web App failed after',
-      'many unsucessful attempts, largely because of issues with assigning a custom',
-      'domain name. Successive reployments are performed manually using PowerShell',
-      'scripts which first rebuild, retag and push an updated Docker image to the',
-      'Azure container, then update the Container App using \'az containerapp update\'.',
-      'Click on the <strong>&#9432;</strong> button for more information on the image and its dimensions.'
+      'many unsucessful attempts, largely due to issues with assigning a custom',
+      'domain name. The \'live\' version of the application is automatically updated',
+      'to reflect code changes using Continuous Integration (CI). The GitHub Actions',
+      '\'Docker Image\' workflow is used to update the Docker Image when code changes',
+      'are pushed to the GitHub repository.',
     ].join(' ');
 
   private static readonly _ExertiveLogoImageSrc: string = 'assets/images/vectors/logos/exertive_lateral_logo_image.svg';

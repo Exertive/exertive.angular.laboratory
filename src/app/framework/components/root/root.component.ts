@@ -13,15 +13,12 @@ import { Component } from '@angular/core';
 import { Inject } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { Params as QueryParameters } from '@angular/router';
-import { mergeMap } from 'rxjs';
 
 // Import Reactive Dependencies
 
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { take } from 'rxjs';
 
 // Import Component Dependencies
 
@@ -31,6 +28,8 @@ import { Composite } from '@app/framework/abstractions/classes/composite/composi
 
 import { AngularVersionInjectionToken } from '@app/framework/injection/tokens/angular/angular.version.injection.token';
 import { LogInjectionToken } from '@app/framework/injection/tokens/log/log.injection.token';
+import { createCustomElement } from '@angular/elements';
+import { SymbolComponent } from '@app/framework/components/inline/symbol/symbol.component';
 
 // The Component Definition
 
@@ -92,6 +91,11 @@ export class RootComponent extends Composite implements OnInit, AfterViewInit, A
     this._angularVersion = elementRef.nativeElement.getAttribute('ng-version');
 
     angularVersion$.next(this._angularVersion || 'n/a');
+
+    const symbolElement: CustomElementConstructor = createCustomElement(SymbolComponent, { injector });
+    // Register the custom element with the browser.
+    customElements.define('symbol-element', symbolElement);
+
   }
 
   // Public Instance Methods
