@@ -180,7 +180,7 @@ export class AzurePanelComponent implements OnInit, OnDestroy
 
   private static readonly _DefaultHeight: number = 32;
 
-  private static readonly _HostedUsingText: string = 'Hosted on <b>Microsoft Azure</b> using <b>Docker</b> Linux containers'
+  private static readonly _HostedUsingText: string = 'Hosted on <strong>Microsoft Azure</strong> using <strong>Docker</strong> Linux containers'
 
   private static readonly _AzureImageText: string = 'Azure';
 

@@ -1,6 +1,6 @@
 {
   "name": "exertive-angular-laboratory",
-  "version": "19.2.1",
+  "version": "19.2.3",
   "scripts": {
 
     "ng": "ng",
@@ -18,8 +18,8 @@
     "containerize": "echo Building the Docker image. && npm run build-image",
     "recontainerize": "echo Removing the Docker container and rebuilding. && npm run remove-container && npm run build-image",
 
-    "tag": "docker tag exertive-angular-laboratory exertive.azurecr.io/exertive-angular-laboratory:19.2.1",
-    "push": "docker login exertive.azurecr.io && docker push exertive.azurecr.io/exertive-angular-laboratory:19.2.1",
+    "tag": "docker tag exertive-angular-laboratory exertive.azurecr.io/exertive-angular-laboratory:19.2.3",
+    "push": "docker login exertive.azurecr.io && docker push exertive.azurecr.io/exertive-angular-laboratory:19.2.3",
 
     "publish": "az container create --resource-group exertive-application-resources --name exertive-angular-laboratory --image exertive/exertive-angular-laboratory:latest --os-type Linux --cpu 1 --memory 1.5 --ports 80"
   },

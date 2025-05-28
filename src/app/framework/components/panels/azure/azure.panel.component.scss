@@ -41,12 +41,6 @@ div.app
           text-align: left;
           text-wrap: nowrap;
 
-          bold
-          {
-            @include fonts.open-sans-regular();
-            font-weight: normal;
-          }
-
           &.left
           {
             grid-column: 1;
