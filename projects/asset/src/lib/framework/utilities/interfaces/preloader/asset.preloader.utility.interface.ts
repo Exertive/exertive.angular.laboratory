@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable}  from 'rxjs';
 
-import { IAsset } from '@imaging/domain/primitives/interfaces/asset/asset.primitive.interface';
+import { IAsset } from '@asset/domain/primitives/interfaces/asset/asset.primitive.interface';
 
 export interface IAssetPreloader<TAsset extends IAsset>
 {
